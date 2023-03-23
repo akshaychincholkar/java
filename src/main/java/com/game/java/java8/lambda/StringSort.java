@@ -1,7 +1,7 @@
 package com.game.java.java8.lambda;
 
 import java.util.Arrays;
-
+@FunctionalInterface
 interface Sum{
 public int calculate(int a,int b);
 }
