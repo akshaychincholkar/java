@@ -1,5 +1,6 @@
 package com.game.java.java8.lambda;
 
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 public class Predicates {
@@ -18,5 +19,9 @@ public class Predicates {
         System.out.println("Is number 30 even and string contains a? "+even.and(greaterThan10).test(30));
         System.out.println("Is number 21 even or greater than 10 "+even.or(greaterThan10).test(21));
         System.out.println("Is number 3 smaller than 10 and odd? "+even.negate().and(greaterThan10.negate()).test(3));
+
+        BiPredicate<Integer,Integer> sumLessThan10 = (a,b)->a+b<10;
+        System.out.println("Is sum of 6 and 5 is less than 10? "+sumLessThan10.test(6,5));
+        System.out.println("Is sum of 3 and 4 is less than 10? "+sumLessThan10.test(3,4));
     }
 }
