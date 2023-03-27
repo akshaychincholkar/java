@@ -26,9 +26,9 @@ public class MapAndFlatMap {
         list.add(new Employee(2, "Bittu", "b@gmail.com", new ArrayList<String>(Arrays.asList("123", "232343242"))));
         list.add(new Employee(3, "Manu", "c@gmail.com", new ArrayList<String>(Arrays.asList("5345", "34"))));
 
-        System.out.println("Email ids: "+list.stream().map(employee -> employee.email).collect(Collectors.toList()));
-        System.out.println("Phone numbers: "+list.stream().map(employee -> employee.phonenumbers).collect(Collectors.toList()));
-        System.out.println("Flattened numbers: "+list.stream().flatMap(employee -> employee.phonenumbers.stream()).collect(Collectors.toList()));
+        System.out.println("Email ids: " + list.stream().map(employee -> employee.email).collect(Collectors.toList()));
+        System.out.println("Phone numbers: " + list.stream().map(employee -> employee.phonenumbers).collect(Collectors.toList()));
+        System.out.println("Flattened numbers: " + list.stream().flatMap(employee -> employee.phonenumbers.stream()).collect(Collectors.toList()));
 
     }
 }
