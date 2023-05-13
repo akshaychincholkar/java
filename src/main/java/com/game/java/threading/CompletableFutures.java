@@ -23,13 +23,16 @@ public class CompletableFutures {
         CompletableFuture<String> completableFuture4 = CompletableFuture.supplyAsync(()->Thread.currentThread().getName(),executorService);
 
         CompletableFuture<String> completableFuture5 = CompletableFuture.supplyAsync(()->"Shree").thenApply((a)->a+" Swami").thenApply((a)->a+ " Samartha");
+        CompletableFuture<Void> completableFuture = CompletableFuture.supplyAsync(()->"Hello").thenApply((a)->a+" world").thenRunAsync(()-> System.out.println("Babu"));
+
         try {
             System.out.println("complete(): "+completableFuture1.get());
             System.out.println("runAsync(): "+completableFuture2.get());
             System.out.println("supplyAsync(): "+completableFuture3.get());
             System.out.println("supplyAsync() with executor service: "+completableFuture4.get());
             System.out.println("supplyAsync() with thenSupply(): "+completableFuture5.get());
-            System.out.println("");
+            completableFuture.get();
+            System.out.println("supplyAsync() with thenApply(): ");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } catch (ExecutionException e) {
