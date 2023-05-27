@@ -7,6 +7,12 @@ import java.util.stream.Collectors;
 
 public class ArrayListStreams {
     public static void main(String[] args) {
+        var arrayList = List.of(1,2,3);
+        arrayList.forEach(x-> {
+            x = x + 10;
+            System.out.println(x);
+        });
+
         List<String> list = new ArrayList<>();
         list.add("akshay");
         list.add("darshana");
