@@ -12,7 +12,9 @@ public class ArrayListStreams {
             x = x + 10;
             System.out.println(x);
         });
-
+//        arrayList.stream().forEach(x->x=x+10).peek(); // can't call the peek() after forEach() and
+                                                        // peak() will be effective only if terminal
+                                                        // method is called after it : peek().count()
         List<String> list = new ArrayList<>();
         list.add("akshay");
         list.add("darshana");
